@@ -1,3 +1,5 @@
+require_relative '../db/sql_runner'
+
 class BurgerDeal
 
   attr_reader :id, :burger_id, :deal_id
@@ -18,6 +20,13 @@ class BurgerDeal
     values = [@burger_id, @deal_id]
     result = SqlRunner.run(sql,values)
     @id = result[0]['id'].to_i
+  end
+
+  def self.delete_all()
+    sql = '
+      DELETE FROM burger_deals;
+    '
+    SqlRunner.run(sql)
   end
 
 end
