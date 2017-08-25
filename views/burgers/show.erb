@@ -1,0 +1,22 @@
+<h1>Here you can see the burgers available at</h1>
+<h1>the eatery <%= @eatery.name %></h1>
+
+<h1>List of burgers:</h1>
+
+<!-- Start of first loop: burgers -->
+<% for burger in @burgers do %>
+
+  <p><%= burger.name  %></p>
+
+  <h4>Deals this burger is included in:</h4>
+
+  <!-- Start of the second loop: through each burger deals -->
+  <% for deal in burger.deals do %>
+
+    <p><%= deal.name %></p>
+
+  <% end %>
+  <!-- End of deals loop -->
+
+<% end %>
+<!-- End of burgers loop -->

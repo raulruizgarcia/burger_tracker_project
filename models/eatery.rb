@@ -56,4 +56,14 @@ class Eatery
   return result.map(){|hash| Eatery.new(hash)}
   end
 
+  def self.find_by_id(id)
+    sql = '
+      SELECT * FROM eateries
+      WHERE id = $1;
+    '
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return Eatery.new(result[0])
+  end
+
 end
