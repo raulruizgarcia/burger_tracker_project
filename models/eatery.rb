@@ -48,4 +48,12 @@ class Eatery
     return result.map(){|hash| Burger.new(hash)}
   end
 
+  def self.all()
+  sql = '
+    SELECT * FROM eateries;
+  '
+  result = SqlRunner.run(sql)
+  return result.map(){|hash| Eatery.new(hash)}
+  end
+
 end
