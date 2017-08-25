@@ -66,4 +66,14 @@ class Eatery
     return Eatery.new(result[0])
   end
 
+  def self.find_by_name(name)
+    sql = '
+      SELECT * FROM eateries
+      WHERE name = $1;
+    '
+    values = [name]
+    result = SqlRunner.run(sql, values)
+    return Eatery.new(result[0])
+  end
+
 end

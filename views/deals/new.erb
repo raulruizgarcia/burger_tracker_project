@@ -1,1 +1,41 @@
 <h1>New Deal page</h1>
+
+
+<form action="/deals" method="post">
+  <p>
+    <label for="eatery-name">Eatery:</label>
+    <% puts @eatery.name %>
+    <input type="text" id="eatery-name" name="eatery_name"
+    value="<%= @eatery.name %>"
+    readonly>
+  </p>
+
+
+  <p>
+  <label for="deal-name">Deal name:</label>
+  <input type="text" name="name" id="deal-name">
+  </p>
+
+  <p>
+    <label for="burger-select">Burger:</label>
+    <select name="burger_id" id="burger-select">
+
+    <% for burger in @eatery.burgers do %>
+      <option value= <%=burger.id  %>><%= burger.name %></option>
+    <% end %>
+    </select>
+  </p>
+
+  <p>
+    <label for="dow-select">Day of the week:</label>
+    <select name="day_of_the_week" id="dow-select">
+
+    <% for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] do %>
+      <option value= <%=day  %>><%= day %></option>
+    <% end %>
+    </select>
+  </p>
+
+
+  <p><input type='submit' value="Create a new deal"></p>
+</form>
