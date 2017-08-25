@@ -30,4 +30,16 @@ class Burger
     SqlRunner.run(sql)
   end
 
+  def deals()
+    sql = '
+      SELECT deals.*
+      FROM deals
+      INNER JOIN burger_deals ON deals.id = burger_deals.deal_id
+      WHERE burger_id = $1;
+    '
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return result.map(){|hash| Deal.new(hash)}
+  end
+
 end

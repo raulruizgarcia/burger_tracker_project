@@ -5,6 +5,7 @@ require_relative '../models/eatery'
 require_relative '../models/deal'
 
 get '/eateries' do
+ @eateries = Eatery.all
  erb(:"eateries/index")
 end
 

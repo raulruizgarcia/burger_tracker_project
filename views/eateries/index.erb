@@ -1,1 +1,29 @@
 <h1>This site belongs to GET /eateries index.erb</h1>
+
+
+<!-- Start looping through all the eateries -->
+<% for eatery in @eateries do %>
+
+  <h2>Eatery name: <%= eatery.name %></h2>
+
+  <h3>Burgers:</h3>
+  <!-- Start of the second loop: through the eatery burgers-->
+  <% for burger in eatery.burgers do %>
+
+    <p><%= burger.name  %></p>
+
+    <h4>Deals this burger is included in:</h4>
+
+    <!-- Start of the third loop: though each burger deals -->
+    <% for deal in burger.deals do %>
+
+      <p><%= deal.name %></p>
+
+    <% end %>
+
+
+  <% end %>
+  <!-- End of burgers loop -->
+
+<% end  %>
+<!-- End of eateries loop -->

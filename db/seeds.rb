@@ -33,7 +33,7 @@ deal3.save
 
 burger_deal1 = BurgerDeal.new({"burger_id" => burger1.id, "deal_id" => deal1.id})
 burger_deal2 = BurgerDeal.new({"burger_id" => burger2.id, "deal_id" => deal2.id})
-burger_deal3 = BurgerDeal.new({"burger_id" => burger2.id, "deal_id" => deal2.id})
+burger_deal3 = BurgerDeal.new({"burger_id" => burger1.id, "deal_id" => deal3.id})
 burger_deal4 = BurgerDeal.new({"burger_id" => burger3.id, "deal_id" => deal3.id})
 
 
