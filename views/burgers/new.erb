@@ -1,0 +1,25 @@
+<h1>This is to add new burgers for the eatery <%= @eatery.name %></h1>
+
+<form action="/burgers" method="post">
+  <p>
+    <label for="eatery-name">Eatery:</label>
+    <% puts @eatery.name %>
+    <input type="text" id="eatery-name" name="eatery_name"
+    value="<%= @eatery.name %>"
+    readonly>
+  </p>
+
+
+  <p>
+  <label for="burger-name">Burger name:</label>
+  <input type="text" name="name" id="burger-name">
+  </p>
+
+  <p>
+  <label for="burger-price">Burger price:</label>
+  <input type="text" name="price" id="burger-price">
+  </p>
+
+
+  <p><input type='submit' value="Add a new burger"></p>
+</form>

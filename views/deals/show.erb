@@ -1,0 +1,21 @@
+<h1>Deals show page for eatery <%= @eatery.name %></h1>
+
+<h1>List of deals:</h1>
+
+<!-- Start of first loop: burgers -->
+<% for deal in @deals do %>
+
+  <p><%= deal.name  %></p>
+
+  <h4>Burgers this deal includes:</h4>
+
+  <!-- Start of the second loop: through each burger deals -->
+  <% for burger in deal.burgers do %>
+
+    <p><%= burger.name %></p>
+
+  <% end %>
+  <!-- End of deals loop -->
+
+<% end %>
+<!-- End of burgers loop -->

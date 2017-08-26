@@ -24,3 +24,9 @@ post '/deals' do
   burger_deal.save
 
 end
+
+get '/eateries/:id/deals' do
+  @eatery = Eatery.find_by_id(params[:id])
+  @deals = @eatery.deals
+  erb(:"deals/show")
+end

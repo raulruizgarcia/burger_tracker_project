@@ -25,5 +25,13 @@
   <% end %>
   <!-- End of burgers loop -->
 
+  <form method="get" action="/earies/<%= eatery.id %>/burgers">
+      <button type="submit">Burgers</button>
+  </form>
+
+  <form method="get" action="/earies/<%= eatery.id %>/deals">
+      <button type="submit">Deals</button>
+  </form>
+
 <% end  %>
 <!-- End of eateries loop -->
