@@ -12,3 +12,9 @@ end
 get '/eateries/new' do
   erb(:"eateries/new")
 end
+
+post '/eateries' do
+  eatery = Eatery.new(params)
+  eatery.save
+  redirect to '/eateries'
+end

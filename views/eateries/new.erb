@@ -1,1 +1,18 @@
 <h1>This site belongs to GET /eateries/new new.erb</h1>
+
+
+<form action="/eateries" method="post">
+  <p>
+    <label for="eatery-name">Eatery name:</label>
+    <input type="text" id="eatery-name" name="name">
+  </p>
+
+
+  <p>
+  <label for="eatery-logo-url">Logo URL (optional):</label>
+  <input type="text" name="logo_url" id="eatery-logo-url">
+  </p>
+
+
+  <p><input type='submit' value="Create a new eatery!"></p>
+</form>
