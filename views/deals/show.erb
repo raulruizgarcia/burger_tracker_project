@@ -1,5 +1,3 @@
-<h1>Deals show page for eatery <%= @eatery.name %></h1>
-
 <h1>List of deals:</h1>
 
 <!-- Start of first loop: burgers -->
@@ -17,5 +15,9 @@
   <% end %>
   <!-- End of deals loop -->
 
+
+  <form method="get" action="/deals/<%= deal.id %>/burger_deals/new">
+      <button type="submit">Add more burgers</button>
+  </form>
 <% end %>
 <!-- End of burgers loop -->

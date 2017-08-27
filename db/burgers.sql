@@ -24,5 +24,6 @@ CREATE TABLE burgers(
 CREATE TABLE burger_deals(
   id SERIAL PRIMARY KEY,
   burger_id INT REFERENCES burgers(id) ON DELETE CASCADE,
-  deal_id INT REFERENCES deals(id) ON DELETE CASCADE
+  deal_id INT REFERENCES deals(id) ON DELETE CASCADE,
+  unique (burger_id, deal_id)
 );

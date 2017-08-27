@@ -1,0 +1,78 @@
+body {
+  font-family: 'Droid Serif', serif;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-image: url("/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+a {
+    color: hotpink;
+}
+
+li {
+  color: black;
+  display: inline;
+  margin: 20px;
+}
+
+h1{
+  text-align: center;
+}
+
+a:visited {
+  color: lightpink;
+}
+
+header {
+  font-size: 50px;
+  text-align: center;
+  padding: 20px;
+}
+
+form {
+  padding: 5px;
+}
+
+.grid {
+  border: 1px hidden mediumaquamarine;
+}
+.grid-row {
+  display: flex;
+  flex-direction: column;
+}
+.cell {
+  flex: 1;
+  border: 1px hidden mediumaquamarine;
+  padding: 10px;
+  text-align: center;
+}
+
+.div-el {
+  text-align: left;
+  color: black;
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px;
+}
+
+
+@media (min-width: 480px){
+  .grid-row-sm {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 720px){
+  .grid-row-md {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 960px){
+  .grid-row-lg {
+    flex-direction: row;
+  }
+}

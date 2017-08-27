@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/contrib/all'
+require 'date'
 require_relative '../models/burger'
 require_relative '../models/eatery'
 require_relative '../models/deal'
@@ -17,16 +18,19 @@ post '/deals' do
 
   deal = Deal.new(params)
   deal.save()
-
-  params['deal_id'] = deal.id
-
-  burger_deal = BurgerDeal.new(params)
-  burger_deal.save
-
 end
 
 get '/eateries/:id/deals' do
   @eatery = Eatery.find_by_id(params[:id])
   @deals = @eatery.deals
   erb(:"deals/show")
+end
+
+get '/dow' do
+  erb(:"deals/dow")
+end
+
+get '/dow/deals' do
+  @deals = Deal.find_by_dow(params['dow_number'].to_i)
+  erb(:"deals/dow_show")
 end

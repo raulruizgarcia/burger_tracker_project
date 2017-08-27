@@ -1,25 +1,25 @@
 <div class="grid">
-  <div class="grid-row grid-row-lg">
+  <div calss="grid row grid-row-sm">
     <!-- Start looping through all the eateries -->
 
     <% for eatery in @eateries do %>
       <div class="cell">
 
 
-        <h1><%= eatery.name %></h1>
+        <h2>Eatery name: <%= eatery.name %></h2>
 
-        <h2>Burgers:</h2>
+        <h3>Burgers:</h3>
         <!-- Start of the second loop: through the eatery burgers-->
         <% for burger in eatery.burgers do %>
 
           <p><%= burger.name  %></p>
 
-          <h3>Deals this burger is included in:</h3>
+          <h4>Deals this burger is included in:</h4>
 
           <!-- Start of the third loop: though each burger deals -->
           <% for deal in burger.deals do %>
 
-            <p><i><%= deal.name %></i></p>
+            <p><%= deal.name %></p>
 
           <% end %>
 

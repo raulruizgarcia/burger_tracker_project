@@ -1,4 +1,4 @@
-<form action="/deals" method="post">
+<form action="/deals/<%= @deal.id %>/burger_deals" method="post">
   <p>
     <label for="eatery-name">Eatery:</label>
     <% puts @eatery.name %>
@@ -7,10 +7,11 @@
     readonly>
   </p>
 
-
   <p>
   <label for="deal-name">Deal name:</label>
-  <input type="text" name="name" id="deal-name">
+  <input type="text" name="deal_name" id="deal-name"
+  value="<%= @deal.name %>"
+  readonly>
   </p>
 
   <p>
@@ -23,16 +24,5 @@
     </select>
   </p>
 
-  <p>
-    <label for="dow-select">Day of the week:</label>
-    <select name="day_of_the_week" id="dow-select">
-
-    <% for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] do %>
-      <option value= <%=day  %>><%= day %></option>
-    <% end %>
-    </select>
-  </p>
-
-
-  <p><input type='submit' value="Create a new deal"></p>
+  <p><input type='submit' value="Add burger to deal!"></p>
 </form>
