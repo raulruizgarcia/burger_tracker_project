@@ -13,14 +13,15 @@ get '/deals/:id/burger_deals/new' do
 end
 
 post '/deals/:id/burger_deals' do
-
   deal_id = Deal.find_by_name(params['deal_name']).id
+  eatery = Deal.find_by_id(deal_id)
   params['deal_id'] = deal_id
 
   @burger_deal = BurgerDeal.new(params)
-  @burger_deal.save
-
-  erb(:"burger_deals/create")
-
+  if @burger_deal.save
+    redirect "/eateries/#{eatery.id}/deals"
+  else
+    redirect "/deals/#{eatery.id}/burger_deals/new"
+  end
 
 end

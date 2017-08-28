@@ -18,6 +18,7 @@ class BurgerDeal
       RETURNING *;
     '
     values = [@burger_id, @deal_id]
+    return false if duplicated?
     result = SqlRunner.run(sql,values)
     @id = result[0]['id'].to_i
   end
@@ -27,6 +28,17 @@ class BurgerDeal
       DELETE FROM burger_deals;
     '
     SqlRunner.run(sql)
+  end
+
+  def duplicated?()
+    sql = '
+      SELECT * FROM burger_deals
+      WHERE burger_id = $1 AND deal_id = $2;
+    '
+    result = SqlRunner.run(sql, [@burger_id, @deal_id])
+    length = result.to_a.length
+    return true if length > 0
+    return false
   end
 
 end

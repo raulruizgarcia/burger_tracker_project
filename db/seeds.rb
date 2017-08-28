@@ -10,7 +10,7 @@ Burger.delete_all
 Deal.delete_all
 BurgerDeal.delete_all
 
-# Eatery seeding...
+# Eatery seeding
 eatery1 = Eatery.new({"name" => "Bob's Burgers"})
 eatery1.save
 eatery2 = Eatery.new({"name" => "Mark Donalds"})
@@ -52,7 +52,7 @@ burger12.save
 deal1 = Deal.new({"name" => "2x1 Tuesday", "eatery_id" => eatery1.id, "day_of_the_week" => "Tuesday"})
 deal2 = Deal.new({"name" => "Bring your cat - get 1/3 off your burger", "eatery_id" => eatery1.id, "day_of_the_week" => "Thursday"})
 deal3 = Deal.new({"name" => "2x1 Tuesday. Now on Friday!", "eatery_id" => eatery2.id, "day_of_the_week" => "Friday"})
-deal4 = Deal.new({"name" => "Clean your own tray deal", "eatery_id" => eatery2.id, "day_of_the_week" => "Wednesday"})
+deal4 = Deal.new({"name" => "Clean your own tray - get one tray", "eatery_id" => eatery2.id, "day_of_the_week" => "Wednesday"})
 deal5 = Deal.new({"name" => "Krabbing for a burger deal", "eatery_id" => eatery3.id, "day_of_the_week" => "Thursday"})
 deal6 = Deal.new({"name" => "Bikini bottom's 2x1 day", "eatery_id" => eatery3.id, "day_of_the_week" => "Saturday"})
 deal7 = Deal.new({"name" => "All you can eat!", "eatery_id" => eatery4.id, "day_of_the_week" => "Sunday"})

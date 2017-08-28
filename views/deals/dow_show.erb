@@ -1,5 +1,13 @@
-<p>Today's deals:</p>
+<div class="form_container">
+
+<h1>Today's deals: </h1>
 
 <% for deal in @deals  %>
-  <%= deal.name %>
+  <div class="form_el">
+    <p>
+      <%= deal.name %> in the restaurant: <%= deal.eatery.name %></p>
+    </p>
+  </div>
 <% end %>
+
+</div>

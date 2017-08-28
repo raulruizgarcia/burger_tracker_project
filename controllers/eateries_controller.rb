@@ -18,3 +18,7 @@ post '/eateries' do
   eatery.save
   redirect to '/eateries'
 end
+
+get '/' do
+  erb(:index)
+end
