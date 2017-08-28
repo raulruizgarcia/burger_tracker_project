@@ -8,8 +8,24 @@ body {
   background-size: cover;
 }
 
-a {
-    color: hotpink;
+a:link {
+  font-style: normal;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+  color: grey;
+}
+
+header a:hover{
+  color: white;
+  text-decoration: none;
 }
 
 li {
@@ -22,9 +38,6 @@ h1{
   text-align: center;
 }
 
-a:visited {
-  color: lightpink;
-}
 
 header {
   font-size: 50px;

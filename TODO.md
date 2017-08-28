@@ -8,4 +8,4 @@ Possible solutions:
   - Find another way to pass the id info from the HTML site to the post request.
 
 
-- The website currently allows to add a burger to a deal in which it already exists. We should impede this somehow.
+- The website currently allows to add a burger to a deal in which it already exists. We should stop this somehow.

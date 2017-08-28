@@ -9,23 +9,21 @@
         <h1><%= eatery.name %></h1>
 
         <h2>Burgers:</h2>
-        <!-- Start of the second loop: through the eatery burgers-->
-        <% for burger in eatery.burgers do %>
+          <!-- Start of the second loop: through the eatery burgers-->
+          <% for burger in eatery.burgers do %>
 
-          <p><%= burger.name  %></p>
+            <p><%= burger.name  %></p>
 
-          <h3>Deals this burger is included in:</h3>
+          <% end %>
 
           <!-- Start of the third loop: though each burger deals -->
-          <% for deal in burger.deals do %>
+          <h2>Deals:</h2>
+          <% for deal in eatery.deals do %>
 
             <p><i><%= deal.name %></i></p>
 
           <% end %>
 
-
-        <% end %>
-        <!-- End of burgers loop -->
 
         <form method="get" action="/eateries/<%= eatery.id %>/burgers">
             <button type="submit">Burgers</button>
