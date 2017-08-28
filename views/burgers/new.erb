@@ -1,25 +1,35 @@
-<h1>This is to add new burgers for the eatery <%= @eatery.name %></h1>
+<h1>Add new burgers to the eatery <%= @eatery.name %></h1>
 
-<form action="/burgers" method="post">
-  <p>
-    <label for="eatery-name">Eatery:</label>
-    <% puts @eatery.name %>
-    <input type="text" id="eatery-name" name="eatery_name"
-    value="<%= @eatery.name %>"
-    readonly>
-  </p>
+<div class="form_container">
+  <form action="/burgers" method="post">
+    <div class="form_el">
+      <p>
+        <label for="eatery-name">Eatery:</label>
+        <% puts @eatery.name %>
+        <input type="text" id="eatery-name" name="eatery_name"
+        value="<%= @eatery.name %>"
+        readonly>
+      </p>
+  </div>
 
+    <div class="form_el">
+      <p>
+      <label for="burger-name">Burger name:</label>
+      <input type="text" name="name" id="burger-name">
+      </p>
+    </div>
 
-  <p>
-  <label for="burger-name">Burger name:</label>
-  <input type="text" name="name" id="burger-name">
-  </p>
+    <div class="form_el">
+      <p>
+      <label for="burger-price">Burger price:</label>
+      <input type="text" name="price" id="burger-price">
+      </p>
+    </div>
 
-  <p>
-  <label for="burger-price">Burger price:</label>
-  <input type="text" name="price" id="burger-price">
-  </p>
+    <div class="form_el">
+      <p><input type='submit' value="Add a new burger"></p>
+    </div>
 
-
-  <p><input type='submit' value="Add a new burger"></p>
-</form>
+  </form>
+  
+</div>

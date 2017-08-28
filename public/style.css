@@ -1,3 +1,9 @@
+/*html {
+    position: relative;
+    min-height: 100%;
+}*/
+
+
 body {
   font-family: 'Droid Serif', serif;
   color: white;
@@ -7,6 +13,16 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+
+/*footer {
+    background-color: orange;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow:hidden;
+}*/
 
 a:link {
   font-style: normal;
@@ -49,29 +65,112 @@ form {
   padding: 5px;
 }
 
-.grid {
-  border: 1px hidden mediumaquamarine;
+button{
+  font-variant: small-caps;
+  cursor:pointer;
 }
-.grid-row {
-  display: flex;
-  flex-direction: column;
-}
-.cell {
-  flex: 1;
-  border: 1px hidden mediumaquamarine;
-  padding: 10px;
+
+footer{
+  border: 1px solid;
+  height: 100px;
   text-align: center;
 }
 
+.nav_container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid;
+  justify-content: space-around;
+  width: 100%;
+  background-color: rgba(1, 0, 0, 0.2);
+  height: 50px;
+  line-height: 50px
+}
+
+.burger_name{
+  font-variant: small-caps;
+  font-size: 1.2em;
+}
+
+
+
+.deal_name{
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+.main_deal_name{
+  font-size: 1.5em;
+  font-variant: small-caps;
+}
+
+.grid-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  flex-grow: 1;
+}
+.cell {
+  min-width: 300px;
+  max-width: 500px;
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  flex-grow: 1;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 30px;
+  background-color: rgba(1, 0, 0, 0.7);
+
+}
+.form_container{
+  display: flex;
+  border: 1px solid;
+  height: 200px;
+  width: auto;
+  margin: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_el{
+  justify-content: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+input[type=submit] {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.buttons_wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+  height: 50px;
+  line-height: 50px
+}
+/*
 .div-el {
   text-align: left;
   color: black;
   display: flex;
   justify-content: flex-start;
   margin: 20px;
-}
+}*/
 
-
+/*
 @media (min-width: 480px){
   .grid-row-sm {
     flex-direction: row;
@@ -88,4 +187,4 @@ form {
   .grid-row-lg {
     flex-direction: row;
   }
-}
+}*/

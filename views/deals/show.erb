@@ -1,23 +1,37 @@
-<h1>List of deals:</h1>
+<div class="grid">
+  <div class ="grid-row"
+    <!-- Start of first loop: burgers -->
+    <% for deal in @deals do %>
+    <div class="cell">
 
-<!-- Start of first loop: burgers -->
-<% for deal in @deals do %>
+        <p>
+          <div class="main_deal_name">
+            <%= deal.name  %>
+          </div>
+        </p>
 
-  <p><%= deal.name  %></p>
+        <p>burgers included</p>
 
-  <h4>Burgers this deal includes:</h4>
+        <!-- Start of the second loop: through each burger deals -->
+        <% for burger in deal.burgers do %>
 
-  <!-- Start of the second loop: through each burger deals -->
-  <% for burger in deal.burgers do %>
+          <p>
+            <div class="burger_name">
+                <%= burger.name %>
+            </div>
 
-    <p><%= burger.name %></p>
+          </p>
 
-  <% end %>
-  <!-- End of deals loop -->
+        <% end %>
+        <!-- End of deals loop -->
 
 
-  <form method="get" action="/deals/<%= deal.id %>/burger_deals/new">
-      <button type="submit">Add more burgers</button>
-  </form>
-<% end %>
-<!-- End of burgers loop -->
+        <form method="get" action="/deals/<%= deal.id %>/burger_deals/new">
+            <button type="submit">Add more burgers</button>
+        </form>
+    </div>
+      <% end %>
+
+    <!-- End of burgers loop -->
+  </div>
+</div>

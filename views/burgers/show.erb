@@ -1,16 +1,23 @@
 <h1>List of burgers from <%= @eatery.name %></h1>
 
+
 <div class="grid">
   <div class="grid-row grid-row-md"
     <!-- Start of first loop: burgers -->
     <% for burger in @burgers do %>
     <div class="cell">
+      <div class="burger_name">
       <h2><%= burger.name  %></h2>
+      </div>
 
       <!-- Start of the second loop: through each burger deals -->
       <% for deal in burger.deals do %>
 
-        <p><%= deal.name %></p>
+        <p>
+          <div class="deal_name">
+          <%= deal.name %>
+          </div>
+        </p>
 
       <% end %>
       <!-- End of deals loop -->
@@ -20,10 +27,16 @@
 </div>
 </div>
 
-<form action="/eateries/<%= @eatery.id %>/burgers/new" method="get">
-  <button type="submit">Add more burgers</button>
-</form>
 
-<form action="/eateries" method="get">
-  <button type="submit">Go back</button>
-</form>
+<div class= "buttons_wrapper">
+
+  <form action="/eateries" method="get">
+    <button type="submit">Go back</button>
+  </form>
+
+  <form action="/eateries/<%= @eatery.id %>/burgers/new" method="get">
+    <button type="submit">Add more burgers</button>
+  </form>
+
+
+</div>

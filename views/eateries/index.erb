@@ -8,19 +8,27 @@
 
         <h1><%= eatery.name %></h1>
 
-        <h2>Burgers:</h2>
+        <h2>Burgers</h2>
           <!-- Start of the second loop: through the eatery burgers-->
           <% for burger in eatery.burgers do %>
 
-            <p><%= burger.name  %></p>
+            <p>
+              <div class="burger_name">
+                <%= burger.name  %>
+              </div>
+            </p>
 
           <% end %>
 
           <!-- Start of the third loop: though each burger deals -->
-          <h2>Deals:</h2>
+          <h2>Deals </h2>
           <% for deal in eatery.deals do %>
 
-            <p><i><%= deal.name %></i></p>
+          <p>
+            <div class= "deal_name">
+              <%= deal.name %>
+            </div>
+          </p>
 
           <% end %>
 
@@ -39,5 +47,5 @@
 
     <% end  %>
     <!-- End of eateries loop -->
-</div>
+  </div>
 </div>

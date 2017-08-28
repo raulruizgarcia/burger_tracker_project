@@ -1,15 +1,21 @@
-<form action="/eateries" method="post">
-  <p>
-    <label for="eatery-name">Eatery name:</label>
-    <input type="text" id="eatery-name" name="name">
-  </p>
+<div class="form_container">
+  <form action="/eateries" method="post">
+    <div class="form_el">
+    <p>
+      <label for="eatery-name">Eatery name:</label>
+      <input type="text" id="eatery-name" name="name">
+    </p>
+  </div>
 
+    <div class="form_el">
+    <p>
+    <label for="eatery-logo-url">Logo URL (optional):</label>
+    <input type="text" name="logo_url" id="eatery-logo-url">
+    </p>
+  </div>
 
-  <p>
-  <label for="eatery-logo-url">Logo URL (optional):</label>
-  <input type="text" name="logo_url" id="eatery-logo-url">
-  </p>
-
-
-  <p><input type='submit' value="Create a new eatery!"></p>
-</form>
+    <div class="form_el">
+    <p><input type='submit' value="Create a new eatery!"></p>
+    </div>
+  </form>
+</div>

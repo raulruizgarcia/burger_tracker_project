@@ -9,15 +9,24 @@
     <header>
       <a href="\eateries">My Burger Tracker Website</a>
     </header>
-    <nav>
-      <ul>
-        <li><a href="/eateries">See all the eateries</a></li>
-        <li><a href="/eateries/new">Add a new eatery</a></li>
-        <li><a href="/dow">Today's deals!</a></li>
-      </ul>
+
+    <nav class="nav_container">
+      <div>
+        <a href="/eateries">See all the eateries</a>
+      </div>
+      <div>
+        <a href="/eateries/new">Add a new eatery</a>
+      </div>
+      <div>
+        <a href="/dow">Today's deals!</a>
+      </div>
+
     </nav>
   </head>
   <body>
     <%= yield %>
+    <footer>
+      FOOTER AREA
+    </footer>
   </body>
 </html>
