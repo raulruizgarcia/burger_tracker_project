@@ -150,7 +150,6 @@ button{
   justify-content: space-around;
   flex-grow: 1;
   margin: 40px;
-  min-height: 500px;
 }
 .cell {
   min-width: 250px;

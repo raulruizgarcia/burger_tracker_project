@@ -24,5 +24,5 @@ post '/burgers' do
   @eatery = Eatery.find_by_id(params['eatery_id'])
   @burger = Burger.new(params)
   @burger.save()
-  erb(:"burgers/create")
+  redirect to "/eateries/#{@eatery.id}/burgers"
 end

@@ -1,6 +1,6 @@
 <h1>
   <img class= "centered_image" src="<%= @eatery.logo_url %>" align="middle"/>
-  <form action="/deals/new" method="get">
+  <form action="/eateries/<%= @eatery.id %>/deals/new" method="get">
     <button type="submit">Add more deals</button>
   </form>
   <form action="/eateries" method="get">
