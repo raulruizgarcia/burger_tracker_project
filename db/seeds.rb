@@ -21,18 +21,18 @@ eatery3 = Eatery.new({"name" => "The Krusty Krab", "logo_url" => "/the_krusty_kr
 eatery3.save
 
 # Burger seeding...
-burger1 = Burger.new({"name" => "As gouda as it gets", "eatery_id" => eatery1.id})
-burger2 = Burger.new({"name" => "Sympathy for the Deviled Egg Burger", "eatery_id" => eatery1.id})
-burger3 = Burger.new({"name" => "Sweet Home Avocado Burger", "eatery_id" => eatery1.id})
-burger4 = Burger.new({"name" => "Mark Chicken", "eatery_id" => eatery2.id})
-burger5 = Burger.new({"name" => "Szechuan burger", "eatery_id" => eatery2.id})
-burger6 = Burger.new({"name" => "Mark Chicken DeLuxe", "eatery_id" => eatery2.id})
-burger7 = Burger.new({"name" => "Krabby Patty Burger", "eatery_id" => eatery3.id})
-burger8 = Burger.new({"name" => "Chicken Sea Burger", "eatery_id" => eatery3.id})
-burger9 = Burger.new({"name" => "Hearty Sponge", "eatery_id" => eatery3.id})
-burger10 = Burger.new({"name" => "Deep Fried Krusty Burger", "eatery_id" => eatery4.id})
-burger11 = Burger.new({"name" => "The Mother Nature Burger", "eatery_id" => eatery4.id})
-burger12 = Burger.new({"name" => "Slideshow Bob Foot Long", "eatery_id" => eatery4.id})
+burger1 = Burger.new({"name" => "As gouda as it gets", "eatery_id" => eatery1.id, "price" => 8.95})
+burger2 = Burger.new({"name" => "Sympathy for the Deviled Egg Burger", "eatery_id" => eatery1.id, "price" => 7.95})
+burger3 = Burger.new({"name" => "Sweet Home Avocado Burger", "eatery_id" => eatery1.id, "price" => 10.95})
+burger4 = Burger.new({"name" => "Mark Chicken", "eatery_id" => eatery2.id, "price" => 8.5})
+burger5 = Burger.new({"name" => "Szechuan burger", "eatery_id" => eatery2.id, "price" => 6.95})
+burger6 = Burger.new({"name" => "Mark Chicken DeLuxe", "eatery_id" => eatery2.id, "price" => 8.55})
+burger7 = Burger.new({"name" => "Krabby Patty Burger", "eatery_id" => eatery3.id, "price" => 6.15})
+burger8 = Burger.new({"name" => "Chicken Sea Burger", "eatery_id" => eatery3.id, "price" => 11.95})
+burger9 = Burger.new({"name" => "Hearty Sponge", "eatery_id" => eatery3.id, "price" => 8.95})
+burger10 = Burger.new({"name" => "Deep Fried Krusty Burger", "eatery_id" => eatery4.id, "price" => 6.95})
+burger11 = Burger.new({"name" => "The Mother Nature Burger", "eatery_id" => eatery4.id, "price" => 6.50})
+burger12 = Burger.new({"name" => "Slideshow Bob Foot Long", "eatery_id" => eatery4.id, "price" => 9.95})
 
 
 burger1.save
@@ -49,14 +49,14 @@ burger11.save
 burger12.save
 
 # Deal seeding...
-deal1 = Deal.new({"name" => "2x1 Tuesday", "eatery_id" => eatery1.id, "day_of_the_week" => "Tuesday"})
-deal2 = Deal.new({"name" => "Bring your cat - get 1/3 off your burger", "eatery_id" => eatery1.id, "day_of_the_week" => "Thursday"})
-deal3 = Deal.new({"name" => "2x1 Tuesday. Now on Friday!", "eatery_id" => eatery2.id, "day_of_the_week" => "Friday"})
-deal4 = Deal.new({"name" => "Clean your own tray - get one for free", "eatery_id" => eatery2.id, "day_of_the_week" => "Wednesday"})
-deal5 = Deal.new({"name" => "Krabbing for a burger deal", "eatery_id" => eatery3.id, "day_of_the_week" => "Thursday"})
-deal6 = Deal.new({"name" => "Bikini bottom's 2x1 day", "eatery_id" => eatery3.id, "day_of_the_week" => "Saturday"})
-deal7 = Deal.new({"name" => "All you can eat!", "eatery_id" => eatery4.id, "day_of_the_week" => "Sunday"})
-deal8 = Deal.new({"name" => "Free cursed frogurt", "eatery_id" => eatery4.id, "day_of_the_week" => "Sunday"})
+deal1 = Deal.new({"name" => "2x1 Tuesday", "eatery_id" => eatery1.id, "day_of_the_week" => "Tuesday", "pct_off" => 50})
+deal2 = Deal.new({"name" => "Bring your cat - get 1/3 off your burger", "eatery_id" => eatery1.id, "day_of_the_week" => "Thursday", "pct_off" => 33})
+deal3 = Deal.new({"name" => "2x1 Tuesday. Now on Friday!", "eatery_id" => eatery2.id, "day_of_the_week" => "Friday", "pct_off" => 50})
+deal4 = Deal.new({"name" => "Clean your own tray - get one burger for free", "eatery_id" => eatery2.id, "day_of_the_week" => "Wednesday", "pct_off" => 100})
+deal5 = Deal.new({"name" => "Krabbing for a burger deal", "eatery_id" => eatery3.id, "day_of_the_week" => "Thursday", "pct_off" => 25})
+deal6 = Deal.new({"name" => "Bikini bottom's 2x1 day", "eatery_id" => eatery3.id, "day_of_the_week" => "Saturday", "pct_off" => 50})
+deal7 = Deal.new({"name" => "All you can eat!", "eatery_id" => eatery4.id, "day_of_the_week" => "Sunday", "pct_off" => 33})
+deal8 = Deal.new({"name" => "Free cursed frogurt", "eatery_id" => eatery4.id, "day_of_the_week" => "Sunday", "pct_off" => 40})
 
 deal1.save
 deal2.save

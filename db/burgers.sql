@@ -13,13 +13,15 @@ CREATE TABLE deals(
   id SERIAL PRIMARY KEY,
   eatery_id INT REFERENCES eateries(id) ON DELETE CASCADE,
   name VARCHAR(255),
-  day_of_the_week VARCHAR(255)
+  day_of_the_week VARCHAR(255),
+  pct_off INT
 );
 
 CREATE TABLE burgers(
   id SERIAL PRIMARY KEY,
   eatery_id INT REFERENCES eateries(id) ON DELETE CASCADE,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  price REAL
 );
 
 CREATE TABLE burger_deals(

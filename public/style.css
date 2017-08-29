@@ -1,8 +1,3 @@
-/*html {
-    position: relative;
-    min-height: 100%;
-}*/
-
 img{
     width:100%;
     max-width:150px;
@@ -27,8 +22,6 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
-
-
 
 a:link {
   padding: 10px;
@@ -79,12 +72,18 @@ button{
   cursor:pointer;
 }
 
-#footer{
+/*#footer{
+  flex-shrink: 0;
+  padding: 20px;
   display:flex;
   border: 1px solid;
   height: 100px;
   flex-grow: 1;
   flex-direction: row;
+  width: 80%;
+  bottom: 0;
+  align-self: center;
+  margin-top: -100px;
 }
 
 .footer_el{
@@ -96,7 +95,7 @@ button{
   margin: 2px;
   justify-content:space-around;
   align-items: center;
-}
+}*/
 
 .nav_container{
   display: flex;
@@ -130,10 +129,10 @@ button{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-around;
   flex-grow: 1;
-  width: 80%;
+  margin: 40px;
   min-height: 500px;
 }
 .cell {
@@ -153,8 +152,6 @@ button{
 .form_container{
   display: flex;
   flex-direction: column;
-  border: 1px solid;
-  height: 200px;
   width: auto;
   margin: 30px;
   align-items: center;
@@ -193,4 +190,5 @@ input[type=submit] {
   flex-grow: 1;
   height: auto;
   align-items: stretch;
+  flex-wrap: wrap;
 }

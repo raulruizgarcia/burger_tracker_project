@@ -4,23 +4,24 @@ require_relative '../db/sql_runner'
 class Deal
 
   attr_accessor :name, :day_of_the_week
-  attr_reader :id, :eatery_id
+  attr_reader :id, :eatery_id, :pct_off
 
   def initialize(params)
     @id = params['id'].to_i if params['id']
     @name = params['name']
     @day_of_the_week = params['day_of_the_week']
     @eatery_id = params['eatery_id']
+    @pct_off = params['pct_off'].to_i
   end
 
   def save()
     sql = '
-      INSERT INTO deals ( name, eatery_id, day_of_the_week)
+      INSERT INTO deals ( name, eatery_id, day_of_the_week, pct_off)
       VALUES
-      ( $1, $2, $3 )
+      ( $1, $2, $3, $4 )
       RETURNING *;
     '
-    values = [@name, @eatery_id, day_of_the_week]
+    values = [@name, @eatery_id, @day_of_the_week, @pct_off]
     result = SqlRunner.run(sql,values)
     @id = result[0]['id'].to_i
   end
