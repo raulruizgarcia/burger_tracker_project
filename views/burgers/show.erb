@@ -1,4 +1,13 @@
-<h1>List of burgers from <%= @eatery.name %></h1>
+<h1>
+  <img class= "centered_image" src="<%= @eatery.logo_url %>" align="middle"/>
+  <form action="/eateries/<%= @eatery.id %>/burgers/new" method="get">
+    <button type="submit">Add more burgers</button>
+  </form>
+  <form action="/eateries" method="get">
+    <button type="submit">Go back</button>
+  </form>
+
+</h1>
 
 
 <div class="grid">
@@ -31,18 +40,4 @@
 <% end %>
 <!-- End of burgers loop -->
 </div>
-</div>
-
-
-<div class= "buttons_wrapper">
-
-  <form action="/eateries" method="get">
-    <button type="submit">Go back</button>
-  </form>
-
-  <form action="/eateries/<%= @eatery.id %>/burgers/new" method="get">
-    <button type="submit">Add more burgers</button>
-  </form>
-
-
 </div>

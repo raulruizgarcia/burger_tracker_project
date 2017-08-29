@@ -13,14 +13,13 @@ get '/eateries/:id/deals/new' do
 end
 
 post '/deals' do
-  params['eatery_id'] = Eatery.find_by_name(params['eatery_name']).id
-
-
   deal = Deal.new(params)
   deal.save()
+  redirect to "eateries/#{deal.eatery_id}/deals"
 end
 
 get '/eateries/:id/deals' do
+  # binding.pry
   @eatery = Eatery.find_by_id(params[:id])
   @deals = @eatery.deals
   erb(:"deals/show")
@@ -33,4 +32,9 @@ end
 get '/dow/deals' do
   @deals = Deal.find_by_dow(params['dow_number'].to_i)
   erb(:"deals/dow_show")
+end
+
+get '/deals/new' do
+  @eateries = Eatery.all()
+  erb(:"deals/new")
 end

@@ -1,12 +1,15 @@
+
 <form action="/deals" method="post">
+
   <p>
     <label for="eatery-name">Eatery:</label>
-    <% puts @eatery.name %>
-    <input type="text" id="eatery-name" name="eatery_name"
-    value="<%= @eatery.name %>"
-    readonly>
-  </p>
+    <select name = eatery_id>
+      <% for eatery in @eateries %>
+      <option value="<%= eatery.id %>"><%= eatery.name %></option>
+        <% end %>
+    </select>
 
+  </p>
 
   <p>
   <label for="deal-name">Deal name:</label>
@@ -14,13 +17,8 @@
   </p>
 
   <p>
-    <label for="burger-select">Burger:</label>
-    <select name="burger_id" id="burger-select">
-
-    <% for burger in @eatery.burgers do %>
-      <option value= <%=burger.id  %>><%= burger.name %></option>
-    <% end %>
-    </select>
+  <label for="pct-off">% discount:</label>
+  <input type="number" name="pct_off" id="pct-off">
   </p>
 
   <p>
@@ -35,4 +33,3 @@
 
 
   <p><input type='submit' value="Create a new deal"></p>
-</form>
