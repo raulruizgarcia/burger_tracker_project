@@ -1,4 +1,5 @@
 require_relative '../db/sql_runner'
+require 'pry'
 
 class Burger
 
@@ -41,6 +42,20 @@ class Burger
     values = [@id]
     result = SqlRunner.run(sql, values)
     return result.map(){|hash| Deal.new(hash)}
+  end
+
+  def apply_deal(deal_id)
+    sql = '
+    SELECT deals.*
+    FROM deals
+    INNER JOIN burger_deals ON deals.id = burger_deals.deal_id
+    WHERE burger_id = $1 AND deal_id = $2;
+    '
+    values = [@id, deal_id]
+    result = SqlRunner.run(sql, values)
+    pct_off = result[0]["pct_off"].to_f
+    # binding.pry
+    return (@price - (pct_off * @price) / 100).round(2)
   end
 
 end
