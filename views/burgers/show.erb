@@ -7,7 +7,7 @@
     <% for burger in @burgers do %>
     <div class="cell">
       <div class="burger_name">
-      <h2><%= burger.name  %></h2>
+      <h2><%= burger.name  %> <div class="price">£<%= burger.price %></div></h2>
       </div>
 
       <!-- Start of the second loop: through each burger deals -->
@@ -16,6 +16,12 @@
         <p>
           <div class="deal_name">
           <%= deal.name %>
+          </div>
+          <div class="deal_name">
+            <%= deal.pct_off %>% off
+            <div
+              class="discounted_price">£<%= burger.apply_deal(deal.id) %>
+            </div>
           </div>
         </p>
 

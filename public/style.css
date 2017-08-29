@@ -41,6 +41,14 @@ a:hover{
 
 }
 
+.main_link:link{
+  color: rgb(128, 128, 255);
+}
+
+.main_link:visited{
+  color: rgb(128, 128, 255);
+}
+
 header a:hover{
   color: white;
   text-decoration: none;
@@ -116,13 +124,17 @@ button{
 }
 
 .deal_name{
-  font-size: 0.8em;
+  font-size: 1em;
   font-style: italic;
 }
 
 .main_deal_name{
   font-size: 1.5em;
   font-variant: small-caps;
+}
+
+.discounted_price{
+  color: rgb(26, 255, 26);
 }
 
 .grid-row {
@@ -191,4 +203,9 @@ input[type=submit] {
   height: auto;
   align-items: stretch;
   flex-wrap: wrap;
+}
+
+.old_price{
+  text-decoration: line-through;
+  color: red;
 }

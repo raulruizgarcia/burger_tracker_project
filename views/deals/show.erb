@@ -17,8 +17,9 @@
 
           <p>
             <div class="burger_name">
-                <%= burger.name %>
+                <%= burger.name %> <span class="old_price"> £<%= burger.price %> </span> <span class="discounted_price">  &nbsp £<%= burger.apply_deal(deal.id) %></span>
             </div>
+
 
           </p>
 
