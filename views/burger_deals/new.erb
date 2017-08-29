@@ -1,33 +1,46 @@
-<form action="/deals/<%= @deal.id %>/burger_deals" method="post">
-  <p>
-    <label for="eatery-name">Eatery:</label>
-    <% puts @eatery.name %>
-    <input type="text" id="eatery-name" name="eatery_name"
-    value="<%= @eatery.name %>"
-    readonly>
-  </p>
 
-  <p>
-  <label for="deal-name">Deal name:</label>
-  <input type="text" name="deal_name" id="deal-name"
-  value="<%= @deal.name %>"
-  readonly>
-  </p>
+<div class="form_container">
+  <form action="/deals/<%= @deal.id %>/burger_deals" method="post">
+      <div class="form_el"
+        <p>
+          <label for="eatery-name">Eatery:</label>
+          <% puts @eatery.name %>
+          <input type="text" id="eatery-name" name="eatery_name"
+          value="<%= @eatery.name %>"
+          readonly>
+        </p>
+      </div>
 
-  <p>
-    <label for="burger-select">Burger:</label>
-    <select name="burger_id" id="burger-select">
+      <div class="form_el">
+        <p>
+        <label for="deal-name">Deal name:</label>
+        <input type="text" name="deal_name" id="deal-name"
+        value="<%= @deal.name %>"
+        readonly>
+        </p>
+      </div>
 
-    <% for burger in @eatery.burgers do %>
-      <option value= <%=burger.id  %>><%= burger.name %></option>
-    <% end %>
-    </select>
-  </p>
+      <div class="form_el">
+        <p>
+          <label for="burger-select">Burger:</label>
+          <select name="burger_id" id="burger-select">
 
-  <p><input type='submit' value="Add burger to deal!">
-   </p>
-   </form>
+          <% for burger in @eatery.burgers do %>
+            <option value= <%=burger.id  %>><%= burger.name %></option>
+          <% end %>
+          </select>
+        </p>
+      </div>
+
+      <div class="form_el">
+        <p>
+          <input type='submit' value="Add burger to deal!">
+        </p>
+      </div>
+  </form>
 
    <form action="/eateries" method="get">
      <button type="submit">Go back</button>
    </form>
+
+</div>

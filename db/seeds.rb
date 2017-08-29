@@ -11,13 +11,13 @@ Deal.delete_all
 BurgerDeal.delete_all
 
 # Eatery seeding
-eatery1 = Eatery.new({"name" => "Bob's Burgers"})
+eatery1 = Eatery.new({"name" => "Bob's Burgers", "logo_url" => "/bobs_burgers.jpg"})
 eatery1.save
-eatery2 = Eatery.new({"name" => "Mark Donalds"})
+eatery2 = Eatery.new({"name" => "Mark Donalds","logo_url" => "/mark_donalds.png"})
 eatery2.save
-eatery4 = Eatery.new({"name" => "Krusty Burger"})
+eatery4 = Eatery.new({"name" => "Krusty Burger", "logo_url" => "/krusty_burger.png"})
 eatery4.save
-eatery3 = Eatery.new({"name" => "The Krusty Krab"})
+eatery3 = Eatery.new({"name" => "The Krusty Krab", "logo_url" => "/the_krusty_krab.png"})
 eatery3.save
 
 # Burger seeding...
@@ -52,7 +52,7 @@ burger12.save
 deal1 = Deal.new({"name" => "2x1 Tuesday", "eatery_id" => eatery1.id, "day_of_the_week" => "Tuesday"})
 deal2 = Deal.new({"name" => "Bring your cat - get 1/3 off your burger", "eatery_id" => eatery1.id, "day_of_the_week" => "Thursday"})
 deal3 = Deal.new({"name" => "2x1 Tuesday. Now on Friday!", "eatery_id" => eatery2.id, "day_of_the_week" => "Friday"})
-deal4 = Deal.new({"name" => "Clean your own tray - get one tray", "eatery_id" => eatery2.id, "day_of_the_week" => "Wednesday"})
+deal4 = Deal.new({"name" => "Clean your own tray - get one for free", "eatery_id" => eatery2.id, "day_of_the_week" => "Wednesday"})
 deal5 = Deal.new({"name" => "Krabbing for a burger deal", "eatery_id" => eatery3.id, "day_of_the_week" => "Thursday"})
 deal6 = Deal.new({"name" => "Bikini bottom's 2x1 day", "eatery_id" => eatery3.id, "day_of_the_week" => "Saturday"})
 deal7 = Deal.new({"name" => "All you can eat!", "eatery_id" => eatery4.id, "day_of_the_week" => "Sunday"})

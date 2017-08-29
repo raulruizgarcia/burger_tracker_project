@@ -3,22 +3,23 @@ require_relative './deal'
 
 class Eatery
 
-  attr_accessor :name
+  attr_accessor :name, :logo_url
   attr_reader :id
 
   def initialize(params)
     @id = params['id'].to_i if params['id']
     @name = params['name']
+    @logo_url = params['logo_url']
   end
 
   def save()
     sql = '
-      INSERT INTO eateries ( name )
+      INSERT INTO eateries ( name, logo_url )
       VALUES
-      ( $1 )
+      ( $1, $2 )
       RETURNING *;
     '
-    values = [@name]
+    values = [@name, @logo_url]
     result = SqlRunner.run(sql,values)
     @id = result[0]['id'].to_i
   end

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>My burger deals!</title>
-    <link rel="shortcut icon" href="https://d30y9cdsu7xlg0.cloudfront.net/png/153732-200.png">
+    <link rel="shortcut icon" href="/burger_icon.png">
     <link rel="stylesheet" href="/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
@@ -25,6 +25,22 @@
     </nav>
   </head>
   <body>
-    <%= yield %>
+    <section class="main"
+      <div>
+        <%= yield %>
+      </div>
+      <div id="footer">
+        <div class="footer_el">
+          <img class="img_sm" src="/facebook.png">
+          <img class="img_sm" src="/twitter.png">
+          <img class="img_sm" src="/instagram.png">
+        </div>
+        <div class="footer_el">
+          <img class="img_md" src="/burger_icon.png">
+        </div>
+        <div class="footer_el"> &copy; Raul Ruiz</div>
+      </div>
+
+    </section>
   </body>
 </html>

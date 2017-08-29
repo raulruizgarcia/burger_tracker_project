@@ -3,11 +3,13 @@
 <h1>Today's deals: </h1>
 
 <% for deal in @deals  %>
-  <div class="form_el">
     <p>
-      <%= deal.name %> in the restaurant: <%= deal.eatery.name %></p>
+      <img src="<%= deal.eatery.logo_url %>">
     </p>
-  </div>
+    <p>
+      <%= deal.name %>
+    </p>
+
 <% end %>
 
 </div>

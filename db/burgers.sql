@@ -5,7 +5,8 @@ DROP TABLE IF EXISTS eateries CASCADE;
 
 CREATE TABLE eateries(
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  logo_url VARCHAR(255)
 );
 
 CREATE TABLE deals(

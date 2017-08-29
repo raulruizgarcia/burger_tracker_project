@@ -6,9 +6,11 @@
       <div class="cell">
 
 
-        <h1><%= eatery.name %></h1>
+          <img src="<%= eatery.logo_url %>"/>
 
-        <h2>Burgers</h2>
+        <h2>
+          <a href="/eateries/<%= eatery.id %>/burgers">Burgers</a>
+        </h2>
           <!-- Start of the second loop: through the eatery burgers-->
           <% for burger in eatery.burgers do %>
 
@@ -21,7 +23,9 @@
           <% end %>
 
           <!-- Start of the third loop: though each burger deals -->
-          <h2>Deals </h2>
+          <h2>
+            <a href="/eateries/<%= eatery.id %>/deals">Deals</a>
+          </h2>
           <% for deal in eatery.deals do %>
 
           <p>
@@ -31,15 +35,6 @@
           </p>
 
           <% end %>
-
-
-        <form method="get" action="/eateries/<%= eatery.id %>/burgers">
-            <button type="submit">Burgers</button>
-        </form>
-
-        <form method="get" action="/eateries/<%= eatery.id %>/deals">
-            <button type="submit">Deals</button>
-        </form>
 
 
       </div>
