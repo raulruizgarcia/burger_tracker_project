@@ -44,7 +44,20 @@ get '/deals/new' do
   erb(:"deals/new")
 end
 
-# get '/eateries/:id/deals/new' do
-#   @eatery = Eatery.find_by_id(params["id"])
-#   erb(:"eateries/new_deal")
-# end
+get '/eateries/:eatery_id/deals/:id/edit' do
+  @eatery = Eatery.find_by_id(params['eatery_id'])
+  @deal = Deal.find_by_id(params['id'])
+  erb(:"deals/edit")
+end
+
+post '/eateries/:eatery_id/deals/:id/delete' do
+  deal = Deal.find_by_id(params['id'])
+  deal.delete
+  redirect to "/eateries/#{deal.eatery.id}/deals"
+end
+
+post '/eateries/:eatery_id/deals/:id' do
+  deal = Deal.new(params)
+  deal.update
+  redirect to "/eateries/#{deal.eatery.id}/deals"
+end

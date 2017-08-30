@@ -41,10 +41,25 @@
         <% end %>
         <!-- End of deals loop -->
 
-
         <form method="get" action="/deals/<%= deal.id %>/burger_deals/new">
-            <button type="submit">Add more burgers</button>
+            <button type="submit">Add burgers to deal</button>
         </form>
+
+
+        <div class="two_bt_container">
+          <div>
+            <form action="/eateries/<%= deal.eatery.id %>/deals/<%= deal.id %>/edit" method="get">
+              <button type="submit">Edit deal</button>
+            </form>
+          </div>
+          <div>
+            <form action="/eateries/<%= deal.eatery.id %>/deals/<%= deal.id %>/delete" method="post">
+              <button type="submit">Remove deal</button>
+            </form>
+          </div>
+        </div>
+
+
     </div>
       <% end %>
 

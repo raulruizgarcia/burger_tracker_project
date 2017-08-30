@@ -1,0 +1,47 @@
+<div class="form_container">
+
+
+  <form action="/eateries/<%= @eatery.id %>/deals/<%= @deal.id %>" method="post">
+    <div class="form_el">
+      <p>
+        <label for="eatery-name">Restaurant:</label>
+        <input type="text" name="@eatery_name" value="<%= @eatery.name %>" id="eatery-name" readonly>
+      </p>
+    </div>
+
+    <div class="form_el">
+      <p>
+      <label for="deal-name">Deal name:</label>
+      <input type="text" name="name" id="deal-name" value="<%= @deal.name %>">
+      </p>
+    </div>
+
+    <div class="form_el">
+      <p>
+      <label for="pct-off">% discount:</label>
+      <input type="number" name="pct_off" id="pct-off" value="<%= @deal.pct_off %>">
+      </p>
+    </div>
+
+    <div class="form_el">
+      <p>
+        <label for="dow-select">Day of the week:</label>
+        <select name="day_of_the_week" id="dow-select">
+
+        <% for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] do %>
+          <option <%= "selected" if @deal.day_of_the_week == day %>
+          value= <%=day  %>><%= day %></option>
+        <% end %>
+        </select>
+      </p>
+    </div>
+
+    <div class="form_el">
+
+
+      <p>
+        <input type='submit' value="Create a new deal">
+      </p>
+    </div>
+  </div>
+</div>

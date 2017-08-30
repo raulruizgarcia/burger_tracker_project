@@ -107,4 +107,13 @@ class Deal
     SqlRunner.run(sql, [@id])
   end
 
+  def update()
+    sql = '
+      UPDATE deals
+      SET eatery_id = $1, name = $2, pct_off = $3, day_of_the_week = $4
+      WHERE id = $5;
+    '
+    values = [@eatery_id, @name, @pct_off, @day_of_the_week, @id]
+    SqlRunner.run(sql, values)
+  end
 end
