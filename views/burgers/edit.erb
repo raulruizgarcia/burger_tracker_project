@@ -1,0 +1,33 @@
+<div class="form_container">
+  <form action="/eateries/<%= @burger.eatery.id %>/burgers/<%= @burger.id %>" method="post">
+    <div class="form_el">
+      <p>
+        <label for="eatery-name">Restaurant:</label>
+        <% puts @burger.eatery.name %>
+        <input type="text" id="eatery-name" name="eatery_name"
+        value="<%= @burger.eatery.name %>"
+        readonly>
+      </p>
+  </div>
+
+    <div class="form_el">
+      <p>
+      <label for="burger-name">Burger name:</label>
+      <input type="text" name="name" id="burger-name" value="<%= @burger.name %>">
+      </p>
+    </div>
+
+    <div class="form_el">
+      <p>
+      <label for="burger-price">Burger price:</label>
+      <input type="text" name="price" id="burger-price" value="<%= @burger.price %>">
+      </p>
+    </div>
+
+    <div class="form_el">
+      <p><input type='submit' value="Edit burger"></p>
+    </div>
+
+  </form>
+
+</div>

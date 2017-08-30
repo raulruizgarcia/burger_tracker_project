@@ -34,9 +34,23 @@
           </div>
         </p>
 
+
       <% end %>
       <!-- End of deals loop -->
+      <div class="two_bt_container">
+        <div>
+          <form action="/eateries/<%= burger.eatery.id %>/burgers/<%= burger.id %>/edit" method="get">
+            <button type="submit">Edit burger</button>
+          </form>
+        </div>
+        <div>
+          <form action="/eateries/<%= burger.eatery.id %>/burgers/<%= burger.id %>/delete" method="post">
+            <button type="submit">Remove burger</button>
+          </form>
+        </div>
+      </div>
     </div>
+
 <% end %>
 <!-- End of burgers loop -->
   </div>

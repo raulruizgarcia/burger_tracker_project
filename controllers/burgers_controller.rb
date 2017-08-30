@@ -26,3 +26,19 @@ post '/burgers' do
   @burger.save()
   redirect to "/eateries/#{@eatery.id}/burgers"
 end
+
+post '/eateries/:eatery_id/burgers/:id/delete' do
+  burger = Burger.new(params)
+  burger.delete()
+  redirect to "/eateries/#{params['eatery_id']}/burgers"
+end
+
+get '/eateries/:eatery_id/burgers/:id/edit' do
+  @burger = Burger.find_by_id(params['id'])
+  erb(:"burgers/edit")
+end
+
+post 'eateries/:eatery_id/burgers/:id' do
+  burger = Burger.new(params)
+  burger.delete
+end

@@ -58,4 +58,31 @@ class Burger
     return (@price - (pct_off * @price) / 100).round(2)
   end
 
+  def eatery()
+    sql = '
+      SELECT * FROM eateries
+      WHERE id = $1;
+    '
+    result = SqlRunner.run(sql, [@eatery_id])
+    return Eatery.new(result[0])
+  end
+
+  def delete()
+    sql = '
+      DELETE FROM burgers
+      WHERE id = $1;
+    '
+    SqlRunner.run(sql, [@id])
+  end
+
+  def self.find_by_id(id)
+    sql = '
+      SELECT * FROM burgers
+      WHERE id = $1;
+    '
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return Burger.new(result[0])
+  end
+
 end
