@@ -38,7 +38,8 @@ get '/eateries/:eatery_id/burgers/:id/edit' do
   erb(:"burgers/edit")
 end
 
-post 'eateries/:eatery_id/burgers/:id' do
+post '/eateries/:eatery_id/burgers/:id' do
   burger = Burger.new(params)
-  burger.delete
+  burger.update()
+  redirect to "/eateries/#{params['eatery_id']}/burgers"
 end

@@ -99,4 +99,12 @@ class Deal
     return result.map(){|hash| Deal.new(hash)}
   end
 
+  def delete()
+    sql = '
+      DELETE FROM deals
+      WHERE id = $1;
+    '
+    SqlRunner.run(sql, [@id])
+  end
+
 end

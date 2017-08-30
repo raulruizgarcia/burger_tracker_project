@@ -85,4 +85,14 @@ class Burger
     return Burger.new(result[0])
   end
 
+  def update()
+    sql = '
+      UPDATE burgers
+      SET eatery_id = $1, name = $2, price = $3
+      WHERE id = $4;
+    '
+    values = [@eatery_id, @name, @price, @id]
+    SqlRunner.run(sql, values)
+  end
+
 end
