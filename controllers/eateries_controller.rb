@@ -19,6 +19,7 @@ get '/eateries/:id/edit' do
 end
 
 post '/eateries' do
+  params['logo_url'] = '/burger_icon.png' if params['logo_url'] == ""
   eatery = Eatery.new(params)
   eatery.save
   redirect to '/eateries'

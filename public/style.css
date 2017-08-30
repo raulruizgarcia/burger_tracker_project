@@ -3,6 +3,10 @@ img{
     max-width:150px;
 }
 
+.separator{
+border-bottom: 1px solid;
+}
+
 #welcome_message{
   display: flex;
   width: 70%;
