@@ -3,6 +3,28 @@ img{
     max-width:150px;
 }
 
+#welcome_message{
+  display: flex;
+  width: 70%;
+  height: 500px;
+  position: relative;
+  justify-content: flex-end;
+  align-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-variant: small-caps;
+  font-size: 1.5em;
+
+}
+
+#welcome_el{
+  padding: 50px;
+  border: 1px solid;
+  background-color: rgba(1, 0, 0, 0.7);
+}
+
 .img_sm{
   width: 100%;
   max-width: 50px;
@@ -32,6 +54,7 @@ a:link {
   padding: 10px;
   font-style: normal;
   text-decoration: none;
+  color: white;
 }
 
 a:visited {
@@ -82,7 +105,12 @@ form {
 
 button{
   font-variant: small-caps;
+  padding:5px 15px;
+  background:#ccc;
+  border:0 none;
   cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 
 /*#footer{
@@ -149,11 +177,11 @@ button{
   align-items: center;
   justify-content: space-around;
   flex-grow: 1;
-  margin: 40px;
+  margin: 10;
 }
 .cell {
   min-width: 250px;
-  max-width: 500px;
+  max-width: 350px;
   flex-wrap: wrap;
   flex: 1;
   padding: 10px;
@@ -183,6 +211,7 @@ button{
 }
 
 input[type=submit] {
+    font-variant: small-caps;
     padding:5px 15px;
     background:#ccc;
     border:0 none;

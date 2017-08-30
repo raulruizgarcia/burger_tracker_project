@@ -11,4 +11,6 @@ Possible solutions:
 - The website currently allows to add a burger to a deal in which it already exists. We should stop this somehow.
 
 - Create a new deal page
-- Redirect 
+- Redirect
+
+- Redirect to the specific deal from the dow page

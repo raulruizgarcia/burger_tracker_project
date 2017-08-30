@@ -13,7 +13,7 @@ BurgerDeal.delete_all
 # Eatery seeding
 eatery1 = Eatery.new({"name" => "Bob's Burgers", "logo_url" => "/bobs_burgers.jpg"})
 eatery1.save
-eatery2 = Eatery.new({"name" => "Mark Donalds","logo_url" => "/mark_donalds.png"})
+eatery2 = Eatery.new({"name" => "McDonalds","logo_url" => "/mark_donalds.png"})
 eatery2.save
 eatery4 = Eatery.new({"name" => "Krusty Burger", "logo_url" => "/krusty_burger.png"})
 eatery4.save
@@ -24,9 +24,9 @@ eatery3.save
 burger1 = Burger.new({"name" => "As gouda as it gets", "eatery_id" => eatery1.id, "price" => 8.95})
 burger2 = Burger.new({"name" => "Sympathy for the Deviled Egg Burger", "eatery_id" => eatery1.id, "price" => 7.95})
 burger3 = Burger.new({"name" => "Sweet Home Avocado Burger", "eatery_id" => eatery1.id, "price" => 10.95})
-burger4 = Burger.new({"name" => "Mark Chicken", "eatery_id" => eatery2.id, "price" => 8.5})
+burger4 = Burger.new({"name" => "McChicken", "eatery_id" => eatery2.id, "price" => 8.5})
 burger5 = Burger.new({"name" => "Szechuan burger", "eatery_id" => eatery2.id, "price" => 6.95})
-burger6 = Burger.new({"name" => "Mark Chicken DeLuxe", "eatery_id" => eatery2.id, "price" => 8.55})
+burger6 = Burger.new({"name" => "McChicken DeLuxe", "eatery_id" => eatery2.id, "price" => 8.55})
 burger7 = Burger.new({"name" => "Krabby Patty Burger", "eatery_id" => eatery3.id, "price" => 6.15})
 burger8 = Burger.new({"name" => "Chicken Sea Burger", "eatery_id" => eatery3.id, "price" => 11.95})
 burger9 = Burger.new({"name" => "Hearty Sponge", "eatery_id" => eatery3.id, "price" => 8.95})

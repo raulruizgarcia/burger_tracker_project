@@ -1,35 +1,50 @@
-asfasfjasf
-<form action="/deals" method="post">
+<div class="form_container">
 
-  <p>
-    <label for="eatery-name">Restaurant:</label>
-    <select name = eatery_id>
-      <% for eatery in @eateries %>
-      <option value="<%= eatery.id %>"><%= eatery.name %></option>
+
+  <form action="/deals" method="post">
+    <div class="form_el">
+      <p>
+        <label for="eatery-name">Restaurant:</label>
+        <select name = eatery_id>
+          <% for eatery in @eateries %>
+          <option value="<%= eatery.id %>"><%= eatery.name %></option>
+            <% end %>
+        </select>
+      </p>
+    </div>
+
+    <div class="form_el">
+      <p>
+      <label for="deal-name">Deal name:</label>
+      <input type="text" name="name" id="deal-name">
+      </p>
+    </div>
+
+    <div class="form_el">
+      <p>
+      <label for="pct-off">% discount:</label>
+      <input type="number" name="pct_off" id="pct-off">
+      </p>
+    </div>
+
+    <div class="form_el">
+      <p>
+        <label for="dow-select">Day of the week:</label>
+        <select name="day_of_the_week" id="dow-select">
+
+        <% for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] do %>
+          <option value= <%=day  %>><%= day %></option>
         <% end %>
-    </select>
+        </select>
+      </p>
+    </div>
 
-  </p>
-
-  <p>
-  <label for="deal-name">Deal name:</label>
-  <input type="text" name="name" id="deal-name">
-  </p>
-
-  <p>
-  <label for="pct-off">% discount:</label>
-  <input type="number" name="pct_off" id="pct-off">
-  </p>
-
-  <p>
-    <label for="dow-select">Day of the week:</label>
-    <select name="day_of_the_week" id="dow-select">
-
-    <% for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] do %>
-      <option value= <%=day  %>><%= day %></option>
-    <% end %>
-    </select>
-  </p>
+    <div class="form_el">
 
 
-  <p><input type='submit' value="Create a new deal"></p>
+      <p>
+        <input type='submit' value="Create a new deal">
+      </p>
+    </div>
+  </div>
+</div>

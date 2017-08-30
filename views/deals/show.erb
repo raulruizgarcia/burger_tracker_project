@@ -21,7 +21,11 @@
           </div>
         </p>
 
-        <p>burgers included</p>
+        <p>
+          <div class="deal_name">
+            <%= deal.day_of_the_week %>
+          </div>
+        </p>
 
         <!-- Start of the second loop: through each burger deals -->
         <% for burger in deal.burgers do %>

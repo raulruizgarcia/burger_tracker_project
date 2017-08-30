@@ -7,7 +7,9 @@
       <img src="<%= deal.eatery.logo_url %>">
     </p>
     <p>
-      <%= deal.name %>
+        <a href="/eateries/<%= deal.eatery.id %>/deals">
+          <%= deal.name %>
+        </a>
     </p>
 
 <% end %>
