@@ -12,7 +12,7 @@ CREATE TABLE eateries(
 CREATE TABLE deals(
   id SERIAL PRIMARY KEY,
   eatery_id INT REFERENCES eateries(id) ON DELETE CASCADE,
-  name VARCHAR(255),
+  name VARCHAR(255) UNIQUE,
   day_of_the_week VARCHAR(255),
   pct_off INT
 );
@@ -20,7 +20,7 @@ CREATE TABLE deals(
 CREATE TABLE burgers(
   id SERIAL PRIMARY KEY,
   eatery_id INT REFERENCES eateries(id) ON DELETE CASCADE,
-  name VARCHAR(255),
+  name VARCHAR(255) UNIQUE,
   price REAL
 );
 

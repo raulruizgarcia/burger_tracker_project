@@ -40,10 +40,11 @@ add a new burger to deal
           <input type='submit' value="Add burger to deal!">
         </p>
       </div>
-  </form>
 
-   <form action="/eateries" method="get">
-     <button type="submit">Go back</button>
-   </form>
+      <div class="form_el">
+        <a href="/eateries/<%= @eatery.id %>/deals"><button type="button" name="button">Go back</button></a>
+
+      </div>
+  </form>
 
 </div>
