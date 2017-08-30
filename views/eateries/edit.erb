@@ -1,0 +1,21 @@
+<div class="form_container">
+  <form action="/eateries/<%= @eatery.id %>" method="post">
+    <div class="form_el">
+    <p>
+      <label for="eatery-name">Restaurant:</label>
+      <input type="text" id="eatery-name" name="name", value="<%= @eatery.name %>">
+    </p>
+  </div>
+
+    <div class="form_el">
+    <p>
+    <label for="eatery-logo-url">Logo URL (optional):</label>
+    <input type="text" name="logo_url" id="eatery-logo-url", value="<%= @eatery.logo_url%>">
+    </p>
+  </div>
+
+    <div class="form_el">
+    <p><input type='submit' value="Edit restaurant"></p>
+    </div>
+  </form>
+</div>

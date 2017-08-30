@@ -7,7 +7,7 @@
 
 
           <img src="<%= eatery.logo_url %>"/>
-          <div class="burger_name"><h2><%=  eatery.name if eatery.logo_url == ""  %></h2></div>
+          <div class="burger_name"><h2><%=  eatery.name %></h2></div>
 
         <h2>
           <a class= "main_link" href="/eateries/<%= eatery.id %>/burgers">Burgers</a>
@@ -37,8 +37,23 @@
 
           <% end %>
 
+          <div class="two_bt_container">
+            <div>
+              <form action="/eateries/<%= eatery.id %>/edit" method="get">
+                <button type="submit">Edit restaurant</button>
+              </form>
+            </div>
+            <div>
+              <form action="/eateries/<%= eatery.id %>/delete" method="post">
+                <button type="submit">Remove resturant</button>
+              </form>
+            </div>
+          </div>
 
       </div>
+
+
+
 
 
     <% end  %>

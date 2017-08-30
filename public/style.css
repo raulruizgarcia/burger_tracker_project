@@ -40,6 +40,12 @@ img{
 
 }
 
+.two_bt_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 body {
   font-family: 'Droid Serif', serif;
   color: white;

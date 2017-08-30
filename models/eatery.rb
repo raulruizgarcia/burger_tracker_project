@@ -77,4 +77,22 @@ class Eatery
     return Eatery.new(result[0])
   end
 
+  def update()
+    sql = '
+      UPDATE eateries
+      SET name = $1, logo_url = $2
+      WHERE id = $3;
+    '
+    values = [@name, @logo_url, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = '
+      DELETE FROM eateries
+      WHERE id = $1;
+    '
+    SqlRunner.run(sql, [@id])
+  end
+
 end
