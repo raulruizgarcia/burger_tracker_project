@@ -106,6 +106,5 @@ burger_deal14.save
 burger_deal15.save
 burger_deal16.save
 
-
 binding.pry
 nil

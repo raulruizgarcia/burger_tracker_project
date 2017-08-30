@@ -1,0 +1,36 @@
+<div class="form_container">
+  <form action="/deals/<%= @deal.id %>/delete" method="post">
+
+    <div class="form_el">
+      <p>
+      <label for="eatery-name">Deal:</label>
+      <input type="text" value="<%= @deal.eatery.name %>" id="eatery-name" name="eatery_name" readonly>
+    </p>
+    </div>
+
+    <div class="form_el">
+      <p>
+      <label for="deal-name">Deal:</label>
+      <input type="text" value="<%= @deal.name %>" id="deal-name" name="deal_name" readonly>
+    </p>
+    </div>
+
+    <div class="form_el">
+      <p>
+      <label for="burger-id">Burger:</label>
+        <select name="burger_id" id="burger-id">
+        <% for burger in @deal.burgers  %>
+          <option value="<%= burger.id %>"><%= burger.name %></option>
+        <% end %>
+      </select>
+    </p>
+    </div>
+
+    <div class="form_el">
+      <p>
+      <input type="submit" value="Remove burger from deal">
+    </p>
+    </div>
+
+  </form>
+</div>

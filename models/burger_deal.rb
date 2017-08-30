@@ -1,4 +1,5 @@
 require_relative '../db/sql_runner'
+require 'pry'
 
 class BurgerDeal
 
@@ -39,6 +40,25 @@ class BurgerDeal
     length = result.to_a.length
     return true if length > 0
     return false
+  end
+
+  def delete()
+    sql = '
+      DELETE FROM burger_deals
+      WHERE id = $1;
+    '
+    SqlRunner.run(sql, [@id])
+  end
+
+  def self.find_by_burger_and_deal(burger_id, deal_id)
+    sql = '
+      SELECT *
+      FROM burger_deals
+      WHERE burger_id = $1 AND deal_id = $2;
+    '
+    values = [burger_id, deal_id]
+    result = SqlRunner.run(sql, values)
+    return BurgerDeal.new(result[0])
   end
 
 end

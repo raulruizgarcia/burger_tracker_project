@@ -26,3 +26,21 @@ post '/deals/:id/burger_deals' do
   end
 
 end
+
+# post 'deals/:deal_id/burger_deals/:id/delete' do
+#   deal = Deal.find_by_id(params['deal_id'])
+#   redirect to "/eateries/#{deal.eatery.id}/"
+# end
+
+get '/deals/:id' do
+  @deal = Deal.find_by_id(params[:id])
+  erb(:"burger_deals/delete")
+end
+
+post '/deals/:id/delete' do
+  deal = Deal.find_by_name(params['deal_name'])
+  params['deal_id'] = deal.id
+  burger_deal = BurgerDeal.find_by_burger_and_deal(params['burger_id'], params['deal_id'])
+  burger_deal.delete()
+  redirect to "eateries/#{deal.eatery.id}/deals"
+end
