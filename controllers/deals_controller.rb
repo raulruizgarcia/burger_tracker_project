@@ -5,7 +5,6 @@ require_relative '../models/burger'
 require_relative '../models/eatery'
 require_relative '../models/deal'
 require_relative '../models/burger_deal'
-require 'pry'
 
 get '/eateries/:id/deals/new' do
   @eatery = Eatery.find_by_id(params['id'].to_i)

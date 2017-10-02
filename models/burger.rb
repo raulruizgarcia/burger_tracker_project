@@ -1,5 +1,4 @@
 require_relative '../db/sql_runner'
-require 'pry'
 
 class Burger
 
@@ -54,7 +53,6 @@ class Burger
     values = [@id, deal_id]
     result = SqlRunner.run(sql, values)
     pct_off = result[0]["pct_off"].to_f
-    # binding.pry
     return (@price - (pct_off * @price) / 100).round(2)
   end
 
