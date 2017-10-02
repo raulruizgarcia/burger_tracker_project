@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra/contrib/all'
+require 'sinatra/contrib/all' if development?
 require 'date'
 require_relative '../models/burger'
 require_relative '../models/eatery'
